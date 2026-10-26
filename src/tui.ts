@@ -10,6 +10,7 @@
 import { spawn } from "node:child_process";
 import {
   build,
+  debug,
   DEFAULT_SETTINGS,
   installLocale,
   level as readLevel,
@@ -40,6 +41,8 @@ import { buildKittyKeyboardFlags } from "@opentui/core";
 import { createDynamic, type TextProps } from "@opentui/solid";
 import { jsx } from "@opentui/solid/jsx-runtime";
 
+debug("tui module evaluated");
+
 const METER_SEGMENTS = 7;
 const METER_COLORS = [
   "#3fb950",
@@ -69,6 +72,7 @@ function copyToClipboard(text: string): Promise<void> {
 export default Plugin.define({
   id: "opencode-voice-like-claude.tui",
   setup(ctx) {
+    debug("tui setup start");
     const ui = ctx.ui;
     const settingsPath = (): Settings => current;
     let current: Settings = loadSettings();
@@ -154,6 +158,8 @@ export default Plugin.define({
         return createDynamic(() => (input.mode === "normal" && meter.active ? "text" : undefined), props);
       },
     });
+
+    debug("tui slots registered");
 
     function setLiveText(text: string): void {
       const flat = text.replaceAll(/\s+/gu, " ").trim();
@@ -594,6 +600,8 @@ export default Plugin.define({
 
     // ---- commands ----------------------------------------------------------
 
+    debug("tui registering commands");
+
     ctx.keymap.layer(() => ({
       mode: "global",
       commands: [
@@ -652,5 +660,6 @@ export default Plugin.define({
       const result = build();
       if (result.ok) notify("Dictation helper compiled", "success");
     }
+    debug("tui setup complete");
   },
 });
