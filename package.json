@@ -1,0 +1,35 @@
+{
+  "name": "opencode-voice-like-claude",
+  "version": "0.1.0",
+  "description": "Claude-style voice for the OpenCode TUI: hold space, talk, and the transcript lands in the prompt. On-device dictation via the macOS 26 SpeechAnalyzer framework, optional spoken replies. No API keys, no cloud, no clipboard step.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guuslangelaar0/opencode-voice-like-claude"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.ts"
+  },
+  "files": [
+    "src",
+    "assets",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-tui-plugin",
+    "voice",
+    "dictation",
+    "speech-to-text",
+    "text-to-speech",
+    "speechanalyzer",
+    "macos"
+  ],
+  "peerDependencies": {
+    "@opentui/core": "*",
+    "@opentui/solid": "*"
+  }
+}

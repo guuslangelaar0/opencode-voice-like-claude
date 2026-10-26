@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>cloud.beebeeb.dictate</string>
+    <key>CFBundleName</key>
+    <string>dictate</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Records your voice locally to transcribe it into the OpenCode prompt.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Transcribes your voice on-device using Apple's speech models.</string>
+</dict>
+</plist>
